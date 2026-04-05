@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 3 - Flexbox Layout</title>
+    <style>
+        /* Basic page styling to match the screenshot  */
+        body {
+            background-color: #fbd6a1; /* Orange/Tan background from image */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 50px 0;
+        }
+
+        /* Fixed-width container  */
+        .container {
+            width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            border: 2px solid #bba17e;
+        }
+
+        /* Header and Footer span full width of the container  */
+        header, footer {
+            padding: 20px;
+            border-bottom: 1px solid #bba17e;
+            font-weight: bold;
+        }
+
+        footer {
+            border-top: 1px solid #bba17e;
+            border-bottom: none;
+        }
+
+        /* Flexbox implementation for the 3-column area  */
+        .main-body {
+            display: flex;
+            flex-direction: row; /* Default, but explicit for clarity [cite: 178] */
+            min-height: 400px;
+        }
+
+        /* Column proportions [cite: 171] */
+        .sidebar {
+            flex: 0 0 150px; /* Fixed width sidebars  */
+            padding: 15px;
+            background-color: #ffffff;
+            border-right: 1px solid #bba17e;
+        }
+
+        .sidebar-b {
+            border-right: none;
+            border-left: 1px solid #bba17e;
+        }
+
+        .content {
+            flex: 1; /* Takes up remaining space  */
+            padding: 15px;
+        }
+
+        h3 { margin-top: 0; font-size: 1rem; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>Header</header>
+
+        <div class="main-body">
+            <aside class="sidebar">
+                <h3>Sidebar A</h3>
+            </aside>
+
+            <main class="content">
+                <h3>Main content</h3>
+            </main>
+
+            <aside class="sidebar sidebar-b">
+                <h3>Sidebar B</h3>
+            </aside>
+        </div>
+
+        <footer>Footer</footer>
+    </div>
+
+</body>
+</html>
