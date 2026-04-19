@@ -1,5 +1,4 @@
-
-# 🧠 Computer Architecture – Lab 3
+# 🧠 Computer Architecture – Lab 2
 ## Vacuum Environment AI Simulation
 
 ---
@@ -41,13 +40,9 @@ A **Tkinter-based GUI** is used for real-time visualization of the environment.
 # 🎯 2. OBJECTIVES
 
 The main objectives of this lab are:
-
-- Understand **agent-based AI systems**
-- Implement **state-space search algorithms**
-- Apply:
-  - Breadth-First Search (BFS)
-  - Depth-First Search (DFS)
-  - A* Search
+- Understand agent-based AI systems
+- Implement state-space search algorithms
+- Apply BFS, DFS, and A* Search
 - Simulate perception–action loop
 - Visualize AI behavior using GUI
 
@@ -55,137 +50,129 @@ The main objectives of this lab are:
 
 # 🧠 3. SEARCH ALGORITHMS
 
-## 📍 BFS (Breadth-First Search)
-- Level-by-level exploration
-- Guarantees shortest path in unweighted grid
-- Uses FIFO queue
+## BFS (Breadth-First Search)
+- Level-by-level exploration  
+- Guarantees shortest path in unweighted grid  
+- Uses FIFO queue  
 
-## 📍 DFS (Depth-First Search)
-- Deep exploration first
-- Uses LIFO stack
-- Memory efficient but not optimal
+## DFS (Depth-First Search)
+- Deep exploration first  
+- Uses LIFO stack  
+- Memory efficient but not optimal  
 
-## 📍 A* Search
-- Combines cost + heuristic
-- Faster than BFS in large environments
+## A* Search
+- Combines path cost and heuristic  
+- Faster than BFS in large environments  
+
+Formula:
+f(n) = g(n) + h(n)
 
 ---
 
 # 🏠 4. SYSTEM ARCHITECTURE
 
-## 🧩 Components
+## Environment (vacuum.py)
+- Grid world representation  
+- Handles dirt, walls, agent movement  
+- Provides percepts (bump, dirt, home)  
 
-### 📌 Environment (`vacuum.py`)
-- Grid world representation
-- Handles:
-- Dirt
-- Walls
-- Agent movement
-- Percepts (bump, dirt, home)
+## Agent (myvacuumagent.py)
+- Maintains internal world state  
+- Implements BFS / DFS / A*  
+- Controls movement and cleaning  
 
----
-
-### 📌 Agent (`myvacuumagent.py`)
-- AI decision-making unit
-- Maintains internal world state
-- Implements:
-- BFS
-- DFS
-- A*
-- Controls movement and cleaning actions
-
----
-
-### 📌 GUI (`Lab2 class`)
-- Built using Tkinter
-- Displays:
-- Grid map
-- Agent position
-- Direction
-- Logs
-- Provides controls:
-- Start / Stop / Step execution
+## GUI (Lab2 class)
+- Built using Tkinter  
+- Displays grid, agent, direction, logs  
+- Provides Start / Stop / Step controls  
 
 ---
 
 # 🖥 5. USER INTERFACE
 
-## 🎮 Controls
-- ▶ Start Simulation
-- ⏹ Stop Simulation
-- 👣 Step Execution
-- 🧹 Clear Log
+## Controls
+- Start Simulation  
+- Stop Simulation  
+- Step Execution  
+- Clear Log  
 
-## 🎨 Grid Colors
-| Element | Color |
-|--------|--------|
-| Clean | White |
-| Dirty | Gray |
-| Wall | Black |
-| Home | Blue |
+## Grid Colors
+- Clean: White  
+- Dirty: Gray  
+- Wall: Black  
+- Home: Blue  
 
 ---
 
 # 📊 6. PERFORMANCE METRICS
 
 The system tracks:
-
-- Number of steps
-- Nodes expanded during search
-- Final score
-- Algorithm efficiency
-
----
-
-# 📌 Example Output
-
-```text
-========== RESULT ==========
-Algorithm: BFS
-Grid: 5x5
-Steps: 53
-Nodes explored: 96
-Score: -62
-Optimal: YES
-============================
----
-
-**# ⚙️ 7. COMPILE & RUN (PYTHON PROJECT)
-**
----
-
-## 📌 Prerequisites
-
-Before running the project, ensure the following requirements are met:
-
-- Python **3.8+** installed
-- PyCharm **2025.2.4** (optional)
-- Project root contains the following structure:
+- Number of steps  
+- Nodes expanded  
+- Final score  
+- Algorithm efficiency  
 
 ---
 
-## 💻 Command-line Execution (Recommended)
+# ⚙️ 7. COMPILE & RUN (PYTHON PROJECT)
 
-### 📍 Step 1: Open Terminal in Project Root
+## Prerequisites
+- Python 3.8+ installed  
+- PyCharm 2025.2.4 (optional)  
+- Project root contains:
 
-Navigate to the folder containing:
+lab2/  
+run_lab2.py  
 
 ---
 
-### 📍 Step 2: Create Virtual Environment
+## Command-line Execution (Recommended)
 
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-.venv\Scripts\activate
-python3 run_lab2.py
-run_lab2.py
+Open terminal in project root (folder containing lab2 and run_lab2.py).
+
+Create virtual environment:
+
+python3 -m venv .venv  
+source .venv/bin/activate  
+
+Run application:
+
+python3 run_lab2.py  
+
+---
+
+## PyCharm Execution (Optional)
+- Open project in PyCharm  
+- Set interpreter to Python 3.8+ or .venv  
+- Open run_lab2.py  
+- Click Run  
+
+---
+
+# 📁 8. PROJECT STRUCTURE
+
 .
 ├── lab2/
-│   ├── vacuum.py              # Core Environment & GUI engine
+│   ├── vacuum.py              # Core environment + GUI engine
 │   ├── myvacuumagent.py       # AI agent (BFS / DFS / A*)
 │   ├── reactivevacuumagent.py # Reflex-based agent (no memory)
-│   ├── randomvacuumagent.py   # Stochastic agent (random movement)
-│   └── utils.py               # Helper utilities and data structures
+│   ├── randomvacuumagent.py   # Random movement agent
+│   └── utils.py               # Helper data structures
 │
-└── run_lab2.py                # Main entry point of the system
+└── run_lab2.py                # Main entry point
+
+---
+
+# 🚀 9. CONCLUSION
+
+This project demonstrates an intelligent vacuum agent operating in a grid-based environment using classical AI search algorithms.
+
+The agent is capable of:
+- Autonomous exploration  
+- Dirt detection and cleaning  
+- Obstacle avoidance  
+- Returning to home position  
+
+The system successfully implements BFS, DFS, and A* search strategies and evaluates performance using steps, nodes expanded, and final score.
+
+Overall, this project demonstrates effective application of AI search techniques with real-time visualization using Tkinter GUI.
