@@ -1,4 +1,4 @@
-# 🧠 Computer Architecture – Lab 2
+# 🧠 Computer Architecture – Lab 3
 ## Vacuum Environment AI Simulation
 
 ---
