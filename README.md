@@ -148,52 +148,43 @@ Nodes explored: 96
 Score: -62
 Optimal: YES
 ============================
-⚙️ 7. COMPILE & RUN (PYTHON PROJECT)
-📌 Prerequisites
-Python 3.8+ installed
-PyCharm 2025.2.4 (optional)
-Project root contains:
-lab2/
-run_lab2.py
-💻 Command-line (Recommended)
-📍 Step 1: Open terminal in project root
 
-Make sure you are inside the folder containing:
+**# ⚙️ 7. COMPILE & RUN (PYTHON PROJECT)
+**
+---
 
-lab2/
-run_lab2.py
-📍 Step 2: Create virtual environment
+## 📌 Prerequisites
+
+Before running the project, ensure the following requirements are met:
+
+- Python **3.8+** installed
+- PyCharm **2025.2.4** (optional)
+- Project root contains the following structure:
+
+---
+
+## 💻 Command-line Execution (Recommended)
+
+### 📍 Step 1: Open Terminal in Project Root
+
+Navigate to the folder containing:
+
+---
+
+### 📍 Step 2: Create Virtual Environment
+
+```bash
 python3 -m venv .venv
-📍 Step 3: Activate virtual environment
-macOS / Linux:
 source .venv/bin/activate
-Windows:
 .venv\Scripts\activate
-📍 Step 4: Run the application
 python3 run_lab2.py
-🖥️ PyCharm (Optional)
-Open project in PyCharm
-Set Python interpreter to .venv or Python 3.8+
-Open run_lab2.py
-Click Run
-📁 8. PROJECT STRUCTURE
+run_lab2.py
 .
 ├── lab2/
 │   ├── vacuum.py              # Core Environment & GUI engine
 │   ├── myvacuumagent.py       # AI agent (BFS / DFS / A*)
-│   ├── reactivevacuumagent.py # Simple reflex agent
-│   ├── randomvacuumagent.py   # Random movement agent
-│   └── utils.py               # Helper utilities
+│   ├── reactivevacuumagent.py # Reflex-based agent (no memory)
+│   ├── randomvacuumagent.py   # Stochastic agent (random movement)
+│   └── utils.py               # Helper utilities and data structures
 │
-└── run_lab2.py                # Main entry point
-🚀 9. CONCLUSION
-
-This project demonstrates:
-
-Implementation of classical AI search algorithms
-Intelligent agent behavior in a dynamic environment
-Integration of AI logic with GUI visualization
-Performance evaluation using measurable metrics
-
-The vacuum agent successfully performs exploration, cleaning, and return-home behavior using BFS, DFS, and A* algorithms.
-- Formula:
+└── run_lab2.py                # Main entry point of the system
