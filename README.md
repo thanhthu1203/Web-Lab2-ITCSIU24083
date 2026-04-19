@@ -1,5 +1,5 @@
 
-# 🧠 Computer Architecture – Lab 2  
+# 🧠 Computer Architecture – Lab 3
 ## Vacuum Environment AI Simulation
 
 ---
@@ -148,6 +148,7 @@ Nodes explored: 96
 Score: -62
 Optimal: YES
 ============================
+---
 
 **# ⚙️ 7. COMPILE & RUN (PYTHON PROJECT)
 **
