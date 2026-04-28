@@ -1,178 +1,105 @@
-# 🧠 Computer Architecture – Lab 3
-## Vacuum Environment AI Simulation
+# Web Application Development – Lab 4  
+## Student Management System (JSP + MySQL)
 
 ---
 
-# 🇻🇳 VIETNAM NATIONAL UNIVERSITY – HO CHI MINH CITY  
-## 🏫 INTERNATIONAL UNIVERSITY  
+# VIETNAM NATIONAL UNIVERSITY – HO CHI MINH CITY  
+## INTERNATIONAL UNIVERSITY  
 
 ---
 
-## 📘 Course Information
-- **Course:** Computer Architecture  
-- **Instructor:** Ly Tu Nga  
-- **Lab:** Lab 2 – Intelligent Vacuum Agent Simulation  
+## Course Information
+- **Course:** Web Application Development  
+- **Instructor:** Tran Khai Minh  
+- **Lab:** Lab 4 – JSP + MySQL CRUD Operations  
 
 ---
 
-## 👤 Student Information
+## Student Information
 - **Full Name:** Phạm Thanh Thư  
 - **Student ID:** ITCSIU24083  
-- **Date Submitted:** 11/04/2026  
+- **Date Submitted:** 28/04/2026  
 
 ---
 
-# 🤖 1. PROJECT OVERVIEW
+# 1. PROJECT OVERVIEW
 
-This project implements an **Intelligent Vacuum Cleaner Agent** operating in a **grid-based simulation environment**.
+This project implements a **Student Management System** using **Java Server Pages (JSP)** and **MySQL database**.
 
-The agent is capable of:
-- Exploring unknown space
-- Detecting and cleaning dirt
-- Avoiding obstacles (walls)
-- Returning to home position after task completion
-- Using classical AI search algorithms (BFS, DFS, A*)
+The system provides full **CRUD functionality** and additional features such as:
+- Search students by name or code  
+- Input validation (email, student code format)  
+- Pagination for large datasets  
+- Improved user interface and experience  
 
-A **Tkinter-based GUI** is used for real-time visualization of the environment.
+All database interactions are handled securely using **JDBC with PreparedStatement**.
 
 ---
 
-# 🎯 2. OBJECTIVES
+#  2. OBJECTIVES
 
 The main objectives of this lab are:
-- Understand agent-based AI systems
-- Implement state-space search algorithms
-- Apply BFS, DFS, and A* Search
-- Simulate perception–action loop
-- Visualize AI behavior using GUI
+- Connect JSP pages to MySQL using JDBC  
+- Implement CRUD operations (Create, Read, Update, Delete)  
+- Prevent SQL Injection using PreparedStatement  
+- Handle form submissions and URL parameters  
+- Implement server-side validation  
+- Improve user experience with pagination and UI enhancements  
 
 ---
 
-# 🧠 3. SEARCH ALGORITHMS
+# 3. DATABASE DESIGN
 
-## BFS (Breadth-First Search)
-- Level-by-level exploration  
-- Guarantees shortest path in unweighted grid  
-- Uses FIFO queue  
+## Table: `students`
 
-## DFS (Depth-First Search)
-- Deep exploration first  
-- Uses LIFO stack  
-- Memory efficient but not optimal  
-
-## A* Search
-- Combines path cost and heuristic  
-- Faster than BFS in large environments  
-
-Formula:
-f(n) = g(n) + h(n)
+| Column Name   | Data Type     | Description              |
+|--------------|--------------|--------------------------|
+| id           | INT (PK)     | Auto-increment ID        |
+| student_code | VARCHAR      | Unique student code      |
+| full_name    | VARCHAR      | Student full name        |
+| email        | VARCHAR      | Email address (optional) |
+| major        | VARCHAR      | Student major            |
+| created_at   | TIMESTAMP    | Record creation time     |
 
 ---
 
-# 🏠 4. SYSTEM ARCHITECTURE
+# 4. SYSTEM FUNCTIONALITY
 
-## Environment (vacuum.py)
-- Grid world representation  
-- Handles dirt, walls, agent movement  
-- Provides percepts (bump, dirt, home)  
-
-## Agent (myvacuumagent.py)
-- Maintains internal world state  
-- Implements BFS / DFS / A*  
-- Controls movement and cleaning  
-
-## GUI (Lab2 class)
-- Built using Tkinter  
-- Displays grid, agent, direction, logs  
-- Provides Start / Stop / Step controls  
+## 4.1 View Students
+- Display all students in a table  
+- Sorted by newest records  
+- Includes Edit and Delete actions  
 
 ---
 
-# 🖥 5. USER INTERFACE
-
-## Controls
-- Start Simulation  
-- Stop Simulation  
-- Step Execution  
-- Clear Log  
-
-## Grid Colors
-- Clean: White  
-- Dirty: Gray  
-- Wall: Black  
-- Home: Blue  
+## 4.2 Add Student
+- Form input with validation  
+- Required fields: Student Code, Full Name  
+- Inserts data into database using PreparedStatement  
 
 ---
 
-# 📊 6. PERFORMANCE METRICS
-
-The system tracks:
-- Number of steps  
-- Nodes expanded  
-- Final score  
-- Algorithm efficiency  
+##  4.3 Edit Student
+- Pre-filled form with existing data  
+- Student code is read-only  
+- Updates database record using ID  
 
 ---
 
-# ⚙️ 7. COMPILE & RUN (PYTHON PROJECT)
-
-## Prerequisites
-- Python 3.8+ installed  
-- PyCharm 2025.2.4 (optional)  
-- Project root contains:
-
-lab2/  
-run_lab2.py  
+##  4.4 Delete Student
+- Deletes record by ID  
+- Confirmation dialog before deletion  
+- Redirects with success/error message  
 
 ---
 
-## Command-line Execution (Recommended)
+#  5. SEARCH FUNCTIONALITY
 
-Open terminal in project root (folder containing lab2 and run_lab2.py).
+- Search by **student name** or **student code**  
+- Uses SQL `LIKE` operator  
+- Implemented with GET method (URL-based search)  
 
-Create virtual environment:
-
-python3 -m venv .venv  
-source .venv/bin/activate  
-
-Run application:
-
-python3 run_lab2.py  
-
----
-
-## PyCharm Execution (Optional)
-- Open project in PyCharm  
-- Set interpreter to Python 3.8+ or .venv  
-- Open run_lab2.py  
-- Click Run  
-
----
-
-# 📁 8. PROJECT STRUCTURE
-
-.
-├── lab2/
-│   ├── vacuum.py              # Core environment + GUI engine
-│   ├── myvacuumagent.py       # AI agent (BFS / DFS / A*)
-│   ├── reactivevacuumagent.py # Reflex-based agent (no memory)
-│   ├── randomvacuumagent.py   # Random movement agent
-│   └── utils.py               # Helper data structures
-│
-└── run_lab2.py                # Main entry point
-
----
-
-# 🚀 9. CONCLUSION
-
-This project demonstrates an intelligent vacuum agent operating in a grid-based environment using classical AI search algorithms.
-
-The agent is capable of:
-- Autonomous exploration  
-- Dirt detection and cleaning  
-- Obstacle avoidance  
-- Returning to home position  
-
-The system successfully implements BFS, DFS, and A* search strategies and evaluates performance using steps, nodes expanded, and final score.
-
-Overall, this project demonstrates effective application of AI search techniques with real-time visualization using Tkinter GUI.
+Example query:
+```sql
+SELECT * FROM students 
+WHERE full_name LIKE ? OR student_code LIKE ?
