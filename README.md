@@ -1,105 +1,86 @@
-# Web Application Development – Lab 4  
-## Student Management System (JSP + MySQL)
 
 ---
 
-# VIETNAM NATIONAL UNIVERSITY – HO CHI MINH CITY  
-## INTERNATIONAL UNIVERSITY  
+## 🧱 MVC Components
+
+| Layer | File |
+|------|------|
+| Model | Student.java |
+| DAO | StudentDAO.java |
+| Controller | StudentController.java |
+| Views | student-list.jsp, student-form.jsp |
 
 ---
 
-## Course Information
-- **Course:** Web Application Development  
-- **Instructor:** Tran Khai Minh  
-- **Lab:** Lab 4 – JSP + MySQL CRUD Operations  
+# ⚙️ Features
+
+## ✅ Core Features
+- Create student
+- Read student list
+- Update student
+- Delete student
+
+## 🔍 Advanced Features
+- Search by name / code
+- Filter by major
+- Sort data by columns
+- Server-side validation
 
 ---
 
-## Student Information
-- **Full Name:** Phạm Thanh Thư  
-- **Student ID:** ITCSIU24083  
-- **Date Submitted:** 28/04/2026  
+# 📌 Completed Exercises
+
+- [x] Exercise 5: Search  
+- [x] Exercise 6: Validation  
+- [x] Exercise 7: Sorting & Filtering  
+- [ ] Exercise 8: Pagination  
+- [ ] Bonus: Export Excel  
 
 ---
 
-# 1. PROJECT OVERVIEW
+# 🛠 Tech Stack
 
-This project implements a **Student Management System** using **Java Server Pages (JSP)** and **MySQL database**.
-
-The system provides full **CRUD functionality** and additional features such as:
-- Search students by name or code  
-- Input validation (email, student code format)  
-- Pagination for large datasets  
-- Improved user interface and experience  
-
-All database interactions are handled securely using **JDBC with PreparedStatement**.
+- Java 17+
+- JSP / Servlet (Jakarta EE)
+- MySQL
+- JDBC (PreparedStatement)
+- Apache Tomcat
 
 ---
 
-#  2. OBJECTIVES
+# 🧠 Key Concepts Applied
 
-The main objectives of this lab are:
-- Connect JSP pages to MySQL using JDBC  
-- Implement CRUD operations (Create, Read, Update, Delete)  
-- Prevent SQL Injection using PreparedStatement  
-- Handle form submissions and URL parameters  
-- Implement server-side validation  
-- Improve user experience with pagination and UI enhancements  
-
----
-
-# 3. DATABASE DESIGN
-
-## Table: `students`
-
-| Column Name   | Data Type     | Description              |
-|--------------|--------------|--------------------------|
-| id           | INT (PK)     | Auto-increment ID        |
-| student_code | VARCHAR      | Unique student code      |
-| full_name    | VARCHAR      | Student full name        |
-| email        | VARCHAR      | Email address (optional) |
-| major        | VARCHAR      | Student major            |
-| created_at   | TIMESTAMP    | Record creation time     |
+- MVC Design Pattern  
+- DAO Pattern  
+- HTTP Request Handling  
+- JSP Dynamic Rendering  
+- SQL Query Optimization  
+- Input Validation  
 
 ---
 
-# 4. SYSTEM FUNCTIONALITY
+# ⚠️ Known Issues
 
-## 4.1 View Students
-- Display all students in a table  
-- Sorted by newest records  
-- Includes Edit and Delete actions  
+- Pagination not implemented yet  
+- Minor UI alignment issues  
 
 ---
 
-## 4.2 Add Student
-- Form input with validation  
-- Required fields: Student Code, Full Name  
-- Inserts data into database using PreparedStatement  
+# ✨ Extra Features
+
+- Strict MVC separation  
+- Secure database queries (PreparedStatement)  
+- Clean architecture structure  
+- Search + Filter + Sort combined logic  
 
 ---
 
-##  4.3 Edit Student
-- Pre-filled form with existing data  
-- Student code is read-only  
-- Updates database record using ID  
+# ⏱ Time Spent
+
+~10–14 hours
 
 ---
 
-##  4.4 Delete Student
-- Deletes record by ID  
-- Confirmation dialog before deletion  
-- Redirects with success/error message  
+# 📸 UI Preview
 
----
-
-#  5. SEARCH FUNCTIONALITY
-
-- Search by **student name** or **student code**  
-- Uses SQL `LIKE` operator  
-- Implemented with GET method (URL-based search)  
-
-Example query:
-```sql
-SELECT * FROM students 
-WHERE full_name LIKE ? OR student_code LIKE ?
+> (Add screenshots here if needed)
