@@ -1,139 +1,36 @@
-# 📚 Student Management System – Lab 5 (Servlet + MVC)
+# 🧩 Sudoku CSP Solver (AC-3 & Backtracking)
 
-![Java](https://img.shields.io/badge/Java-17+-orange?style=for-the-badge&logo=java)
-![JSP](https://img.shields.io/badge/JSP-Servlet-blue?style=for-the-badge)
-![MySQL](https://img.shields.io/badge/MySQL-Database-blue?style=for-the-badge&logo=mysql)
-![MVC](https://img.shields.io/badge/Architecture-MVC-green?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge)
+![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
+![AI](https://img.shields.io/badge/Focus-Artificial%20Intelligence-orange.svg)
+![Status](https://img.shields.io/badge/Status-Completed-success.svg)
 
----
-
-## 🎓 VIETNAM NATIONAL UNIVERSITY – HO CHI MINH CITY  
-### 🏫 INTERNATIONAL UNIVERSITY  
+Dự án này sử dụng các kỹ thuật trong **Bài toán thỏa mãn ràng buộc (Constraint Satisfaction Problem - CSP)** để giải quyết các bảng Sudoku từ mức độ dễ đến cực khó. Chương trình tích hợp thuật toán **AC-3** để cắt tỉa miền giá trị và **Backtracking Search** kết hợp với chiến lược **MRV (Minimum Remaining Values)** để tìm lời giải tối ưu.
 
 ---
 
-## 📘 Course Information
-- **Course:** Web Application Development  
-- **Instructor:** Tran Khai Minh  
-- **Lab:** Lab 5 – Servlet & MVC Pattern  
+## 🚀 Tính năng nổi bật
+
+-   **Thuật toán mạnh mẽ**: Kết hợp AC-3 tiền xử lý và Backtracking đệ quy với Forward Checking.
+-   **Xử lý hàng loạt**: Tự động giải đồng thời 145 bảng Sudoku từ Project Euler và Magic Tour.
+-   **Giao diện Pro (GUI)**:
+    -   Duyệt qua từng bảng bằng nút `Next`/`Prev`.
+    -   **Jump to Puzzle**: Nhảy nhanh đến bảng bất kỳ bằng cách nhập số thứ tự.
+    -   **Dynamic Source Label**: Hiển thị nguồn dữ liệu (Project Euler hay Magic Tour) theo thời gian thực.
+    -   **Clean UI**: Giao diện sáng (Light Mode), phân biệt số đề bài (Xanh đen) và số máy giải (Cam).
+-   **Xuất kết quả chuẩn**: Tự động tạo file `solutions.txt` có phân loại Header theo yêu cầu của bài Lab.
 
 ---
 
-## 👤 Student Information
-- **Name:** Phạm Thanh Thư  
-- **Student ID:** ITCSIU24083  
-- **Class:** [Your Class]  
+## 🛠 Cấu trúc thư mục
 
----
-
-# 🚀 Project Overview
-
-This project is a **Student Management System** built using **Java Servlet, JSP, and MySQL** following the **MVC (Model–View–Controller) architecture**.
-
-It improves code structure by separating:
-- 📦 Model (Data layer)
-- 🗄 DAO (Database access)
-- 🎮 Controller (Servlet logic)
-- 🎨 View (JSP interface)
-
----
-
-# 🎯 Objectives
-
-- Implement MVC architecture in Java Web
-- Use Servlet as Controller
-- Apply DAO pattern for database access
-- Handle HTTP GET/POST requests
-- Improve modularity and maintainability
-- Build full CRUD system
-
----
-
-# 🧩 MVC Architecture
-
----
-
-## 🧱 MVC Components
-
-| Layer | File |
-|------|------|
-| Model | Student.java |
-| DAO | StudentDAO.java |
-| Controller | StudentController.java |
-| Views | student-list.jsp, student-form.jsp |
-
----
-
-# ⚙️ Features
-
-## ✅ Core Features
-- Create student
-- Read student list
-- Update student
-- Delete student
-
-## 🔍 Advanced Features
-- Search by name / code
-- Filter by major
-- Sort data by columns
-- Server-side validation
-
----
-
-# 📌 Completed Exercises
-
-- [x] Exercise 5: Search  
-- [x] Exercise 6: Validation  
-- [x] Exercise 7: Sorting & Filtering  
-- [ ] Exercise 8: Pagination  
-- [ ] Bonus: Export Excel  
-
----
-
-# 🛠 Tech Stack
-
-- Java 17+
-- JSP / Servlet (Jakarta EE)
-- MySQL
-- JDBC (PreparedStatement)
-- Apache Tomcat
-
----
-
-# 🧠 Key Concepts Applied
-
-- MVC Design Pattern  
-- DAO Pattern  
-- HTTP Request Handling  
-- JSP Dynamic Rendering  
-- SQL Query Optimization  
-- Input Validation  
-
----
-
-# ⚠️ Known Issues
-
-- Pagination not implemented yet  
-- Minor UI alignment issues  
-
----
-
-# ✨ Extra Features
-
-- Strict MVC separation  
-- Secure database queries (PreparedStatement)  
-- Clean architecture structure  
-- Search + Filter + Sort combined logic  
-
----
-
-# ⏱ Time Spent
-
-~10–14 hours
-
----
-
-# 📸 UI Preview
-
-> (Add screenshots here if needed)
+```text
+.
+├── data/
+│   ├── euler.txt        # 95 bảng từ Project Euler
+│   └── magictour.txt    # 50 bảng Sudoku khó nhất (Top 95)
+├── csp.py               # Định nghĩa mô hình CSP cho Sudoku
+├── search.py            # Chứa thuật toán AC-3 và Backtracking
+├── util.py              # Các cấu trúc dữ liệu bổ trợ
+├── sudoku.py            # Script chạy chính (Batch processing & Export)
+├── gui.py               # Giao diện người dùng đồ họa (Tkinter)
+└── README.md            # Tài liệu hướng dẫn này
